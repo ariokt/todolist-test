@@ -17,6 +17,15 @@ const Dashboard = () => {
         dispatch(getAct());
     }, [])
 
+    const handleTambah = () => {
+        let activity;
+        let input = prompt("Masukkan aktifitas baru:", "Aktifitas");
+        if (input != null) {
+            activity = input
+        }
+
+    }
+
     return (
         <div>
             <Header />
