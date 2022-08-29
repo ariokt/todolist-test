@@ -3,7 +3,7 @@ import "./Header.css"
 
 const Header = () => {
     return (
-        <div className="header w-100 ps-4 py-3">
+        <div className="header w-100 py-3">
             <p>TO DO LIST APP</p>
         </div>
     )

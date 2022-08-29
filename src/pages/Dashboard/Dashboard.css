@@ -1,0 +1,20 @@
+.dashboard__top {
+    padding: 2.5rem 220px 2.5rem 220px;
+}
+
+.dashboard__top button {
+    background-color: #16ABF8;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 45px;
+    border: none;
+}
+
+.dashboard__top p {
+    margin-bottom: 0;
+}
+
+.dashboard__empty {
+    width: fit-content;
+    margin: 0 auto;
+}
