@@ -42,7 +42,7 @@ export const getAct = () => {
     }
 }
 
-export const addAct = (act) => {
+export const addAct = (data) => {
     return (dispatch) => {
         dispatch({
             type: ADD_ACT,
@@ -56,6 +56,7 @@ export const addAct = (act) => {
         axios({
             method: "POST",
             url: "https://floating-mountain-35184.herokuapp.com/activity-groups",
+            data: data,
             timeout: 12000,
         })
         .then((response) => {
