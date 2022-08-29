@@ -6,12 +6,12 @@ import actEmpty from "../../assets/act-empty.svg"
 import { useDispatch, useSelector } from "react-redux"
 import { getAct } from "../../actions/actAction"
 import "./Dashboard.css"
+import ActCard from "../../components/ActCard";
 
 
 const Dashboard = () => {
     const dispatch = useDispatch();
     const { getResult } = useSelector((state) => state.ActivityReducer);
-    console.log(getResult)
 
     useEffect(() => {
         dispatch(getAct());
@@ -27,11 +27,17 @@ const Dashboard = () => {
                     <p>Tambah</p>
                 </button>
             </div>
-            <div className="dashboard__empty">
-                <img  src={actEmpty} />
+            <div className="dashboard__act d-flex gap-4 flex-wrap">
+                {getResult ? (
+                    getResult.map(item => (
+                        <ActCard act={item.title} />
+                    ))
+                ) : (
+                    <div className="dashboard__empty">
+                    <img  src={actEmpty} />
+                </div>
+                )} 
             </div>
-            
-
         </div>
     )
 }

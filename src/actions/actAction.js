@@ -22,7 +22,7 @@ export const getAct = () => {
             dispatch({
                 type: GET_ACT,
                 payload: {
-                    data: response.data,
+                    data: response.data.data,
                     loading: false,
                     errorMsg: false,
                 }
