@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/Header";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import actEmpty from "../../assets/act-empty.svg"
+import { useDispatch, useSelector } from "react-redux"
+import { getAct } from "../../actions/actAction"
 import "./Dashboard.css"
 
 
 const Dashboard = () => {
+    const dispatch = useDispatch();
+    const { getResult } = useSelector((state) => state.ActivityReducer);
+    console.log(getResult)
+
+    useEffect(() => {
+        dispatch(getAct());
+    }, [])
+
     return (
         <div>
             <Header />
